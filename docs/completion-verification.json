@@ -1,0 +1,27 @@
+{
+  "testedAt": "2026-10-28T05:21:24.984Z",
+  "automatedTests": 50,
+  "evaluation": 8,
+  "liveStatus": "passed",
+  "restartRecovery": "Completed Hello-World and Express indexes survived a real API restart and remained queryable without reindexing.",
+  "browserChecks": [
+    "Desktop at 1440px: no horizontal overflow",
+    "Mobile at 390px: no horizontal overflow; tabs scroll within their container",
+    "Saved repository and answer history restored after browser refresh",
+    "Source switching shows the pinned document/code revision",
+    "Graph nodes and keyboard Home/arrow tab navigation work",
+    "Mobile navigation switches repository without mixing histories",
+    "Ctrl+Enter submits a real Express implementation question",
+    "Help dialog is named and dismisses with Escape",
+    "Narrow mobile at 320px: no horizontal overflow"
+  ],
+  "screenshots": [
+    "whycode-desktop.jpg",
+    "whycode-mobile.jpg"
+  ],
+  "deployment": "Prepared Docker/Compose/Caddy configuration; Docker runtime unavailable here, so container/TLS deployment not executed.",
+  "productionDependencyAudit": {
+    "knownVulnerabilities": 0,
+    "checkedAt": "2026-10-28T05:22:18.572Z"
+  }
+}

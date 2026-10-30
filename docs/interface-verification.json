@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-28T05:57:41.673Z",
+  "scope": "Frontend composition, native SVG identity, motion, and usability; existing server behavior retained.",
+  "build": "npm run build passed",
+  "brand": "<?> code chevrons with a question mark, reusable SVG and favicon",
+  "checks": [
+    "No permanent sidebar; archive opens on demand",
+    "Archive makes background inert and returns keyboard focus on Escape",
+    "Saved repositories and investigations restore through the archive",
+    "Animated source map renders real API relationships and has a textual equivalent",
+    "Numbered source excerpts retain actual pinned revision and safe original links",
+    "Motion on: separate screenshot frames differ",
+    "Motion paused: separate screenshot frames are byte-identical",
+    "Motion preference persists locally; CSS and media-query listener respect reduced motion",
+    "No page overflow at 320px, 390px, 520px, and 1440px",
+    "Mobile headline wraps the italic why rather than clipping"
+  ],
+  "screenshots": [
+    "whycode-origin-desktop.jpg",
+    "whycode-origin-mobile.jpg"
+  ],
+  "designDocument": "interface-design.md"
+}

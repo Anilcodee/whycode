@@ -1,0 +1,11 @@
+/** Shared brand palette. Keep surface-specific contrast choices in component styles. */
+:root {
+  --color-ink: #203b32;
+  --color-heading: #19392e;
+  --color-forest: #203d32;
+  --color-forest-deep: #172e26;
+  --color-brand: #246553;
+  --color-copper: #a55b3c;
+  --color-paper: #f5f2eb;
+  --color-copper-light: #d9af85;
+}

@@ -1,0 +1,208 @@
+/* The investigation is a reading workspace: context, question, answer, then sources. */
+.has-repository .main-content { max-width:1320px; padding:0 48px; }
+.has-repository .page-heading { padding:44px 0 28px; gap:25px; }
+.has-repository .page-heading h1 { font-family:'Manrope',sans-serif; font-size:46px; font-weight:700; letter-spacing:-2px; line-height:1.15; margin:0; }
+.has-repository .page-heading h1 em { font-family:var(--display); font-size:1.13em; font-weight:400; color:var(--color-copper); }
+.workspace-intro { font-size:16px; color:#5b6e61; margin:13px 0 0; }
+.has-repository .new-repository-button { border:1px solid #bdcbbd; border-radius:8px; padding:11px 14px; font-size:13px; white-space:nowrap; }
+.workspace-steps { list-style:none; display:grid; grid-template-columns:repeat(3,1fr); padding:0 0 26px; margin:0; gap:24px; }
+.workspace-steps li { display:flex; gap:12px; align-items:center; color:#798577; border-top:2px solid #d7ddcf; padding-top:16px; }
+.workspace-steps li>span { font-family:var(--mono); font-size:12px; display:grid; place-items:center; width:33px; height:33px; border-radius:50%; background:#e8ece1; flex-shrink:0; }
+.workspace-steps strong { display:block; font-size:14px; font-weight:600; }
+.workspace-steps small { display:block; font-size:12px; line-height:1.5; margin-top:3px; }
+.workspace-steps .current { border-color:var(--color-copper); color:#254a37; }
+.workspace-steps .current>span { background:#244b39; color:#faf5e9; }
+.workspace-steps .done { border-color:#688c6c; color:#47634d; }
+.has-repository .repository-card { background:var(--color-forest); border:1px solid var(--color-forest); border-radius:14px; padding:25px 28px 14px; margin-bottom:30px; color:#e6eddd; box-shadow:none; }
+.has-repository .repository-title { flex-wrap:wrap; gap:14px; }
+.has-repository .repository-title h2 { font-family:'Manrope',sans-serif; font-weight:700; font-size:29px; color:#fff8ea; overflow-wrap:anywhere; }
+.has-repository .repo-owner { color:#bfceb6; font-size:13px; }
+.has-repository .repo-icon { color:#e9eedf; background:#ffffff12; width:43px; height:43px; border-radius:10px; }
+.has-repository .repository-card .icon-button { color:#cfdbc5; }
+.has-repository .status-badge { font-size:12px; color:#e7efdf; background:#ffffff12; border:1px solid #ffffff28; padding:7px 11px; border-radius:20px; }
+.has-repository .repo-index-details { border-color:#ffffff24; margin-top:20px; }
+.has-repository .repo-index-details>summary { color:#dbe4d1; font-size:13px; min-height:44px; }
+.has-repository .repo-index-details>summary small { color:#b9cbb1; font-size:12px; }
+.has-repository .repo-stats { padding:18px 0; border-color:#ffffff20; }
+.has-repository .repo-stats strong { color:#fff7e8; font-family:'Manrope',sans-serif; font-size:24px; font-weight:700; }
+.has-repository .repo-stats span,.has-repository .index-date,.has-repository .coverage-details,.has-repository .coverage-details p,.has-repository .history-coverage { color:#c2d0ba; border-color:#ffffff24; font-size:13px; }
+.has-repository .history-coverage strong { color:#f0f0e3; }
+.has-repository .repository-card .secondary { background:#edf0e2; color:#254536; font-weight:600; }
+.has-repository .index-progress { margin:22px 0 18px; color:#dbe5d1; font-size:13px; }
+.has-repository .index-progress progress { accent-color:#d6b28a; height:6px; }
+.has-repository .inline-warning { color:#f0cba5; background:#ffffff08; padding:12px; border-radius:6px; font-size:14px; }
+.has-repository .question-section { margin:30px 0 36px; }
+.has-repository .section-heading h2 { font-family:'Manrope',sans-serif; font-size:29px; font-weight:700; letter-spacing:-1px; }
+.has-repository .question-composer { background:#fffdf8; border:1px solid #bccbb7; border-radius:13px; box-shadow:0 7px 22px #19392e06; overflow:visible; }
+.has-repository .question-composer textarea { font-size:19px; line-height:1.65; padding:23px 25px; min-height:117px; border-radius:13px 13px 0 0; }
+.has-repository .composer-toolbar { border-top:1px solid #e5e8dc; padding:13px 16px; background:#f5f5ec; border-radius:0 0 13px 13px; }
+.has-repository .answer-options summary { font-size:13px; min-height:38px; }
+.has-repository .composer-toolbar .primary { min-height:44px; font-size:14px; font-weight:600; }
+.has-repository .question-suggestions button { background:#ebeede; border-color:#dce3ce; border-radius:20px; color:#46633e; font-size:13px; padding:10px 15px; margin-top:14px; }
+.has-repository .question-suggestions button:hover { background:#dfe7d5; }
+.has-repository .investigation { border:1px solid #cdd7c5; border-radius:14px; overflow:hidden; margin-bottom:55px; scroll-margin-top:104px; box-shadow:0 12px 40px #203d3207; }
+.has-repository .investigation-topline { background:var(--color-forest); color:#d0dfc6; padding:17px 28px; font-size:11px; }
+.has-repository .investigation-topline time { color:#d0dfc6; }
+.has-repository .investigation-question { font-family:'Manrope',sans-serif; font-weight:600; font-size:25px; line-height:1.45; letter-spacing:-.6px; padding:24px 28px; background:#eef1e5; color:#234632; overflow-wrap:anywhere; }
+.has-repository .result-tabs { background:#fffdf8; gap:9px; padding:12px 24px; border-bottom:1px solid #dce2d2; overflow:auto; }
+.has-repository .result-tabs button { flex-shrink:0; font-size:13px; font-weight:600; min-height:40px; padding:10px 13px; border-radius:7px; border:0; color:#667761; }
+.has-repository .result-tabs button[aria-selected=true] { background:#254b39; color:#faf7eb; box-shadow:none; }
+.has-repository .result-tabs button[aria-selected=true] span { color:#f4eddb; }
+.has-repository .result-panel { padding:30px; background:#fffdf8; }
+.has-repository .explanation-heading h2,.has-repository .view-intro h2 { font-family:'Manrope',sans-serif; font-size:28px; font-weight:700; letter-spacing:-1px; line-height:1.3; }
+.has-repository .answer-prose { font-size:17px; line-height:1.9; color:#314d3c; max-width:850px; }
+.has-repository .answer-prose p { line-height:1.9; }
+.has-repository .answer-trail ol { grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+.has-repository .trail-source { min-height:82px; padding:17px; }
+.has-repository .trail-source strong { font-size:14px; font-weight:600; }
+.has-repository .trail-source small { font-size:11px; }
+.has-repository .assessment-reason,.has-repository .temporal-reason { font-size:13px; line-height:1.8; }
+.has-repository .answer-source-footer { background:#f0f2e7; font-size:13px; padding:17px 26px; gap:15px; }
+.has-repository .claim-details summary,.has-repository .result-notes summary { font-size:13px; min-height:45px; }
+.has-repository .source-row { padding:18px 12px; border-radius:8px; margin-bottom:5px; }
+.has-repository .source-row:hover,.has-repository .source-row.inspected { background:#edf1e5; padding-left:12px; }
+.has-repository .source-row-copy strong { font-size:15px; font-weight:600; line-height:1.5; }
+.has-repository .source-row-copy small { font-size:12px; }
+.has-repository .source-inspector { background:#eef1e7; border-color:#d2dcc8; padding:25px; scroll-margin-top:106px; }
+.has-repository .source-inspector h3 { font-family:'Manrope',sans-serif; font-size:23px; font-weight:700; line-height:1.35; letter-spacing:-.7px; overflow-wrap:anywhere; }
+.has-repository .source-switcher { display:flex; flex-wrap:wrap; gap:6px; }
+.has-repository .source-switcher button { min-width:33px; min-height:33px; font-size:12px; border-radius:6px; }
+.has-repository .source-switcher button.selected { background:#254b39; color:#fff9ee; }
+.has-repository .source-excerpt { background:#fffdf7; border:1px solid #d4dec9; border-radius:8px; }
+.has-repository .source-excerpt pre { font-size:13px; line-height:1.8; }
+.has-repository .source-original { font-size:14px; font-weight:600; padding:13px 0; }
+.has-repository .timeline a { font-size:16px; font-weight:600; line-height:1.6; }
+.has-repository .timeline time { font-size:12px; }
+.has-repository .timeline-dot { width:8px; height:8px; left:-4px; background:#728e6c; }
+.has-repository .loading-investigation { background:#e9eedf; border:1px solid #cad7be; border-radius:13px; padding:28px; margin-bottom:40px; }
+.has-repository .loading-investigation h3 { font-family:'Manrope',sans-serif; font-size:24px; font-weight:700; }
+.has-repository .loading-investigation p { font-size:15px; }
+.has-repository .ready-state { padding:20px 0 45px; font-size:15px; }
+.has-repository .site-footer { margin-top:35px; }
+.sidebar .archive-heading h2 { font-family:'Manrope',sans-serif; font-size:29px; font-weight:700; letter-spacing:-1px; }
+@media(max-width:1000px) { .has-repository .main-content { padding:0 30px; } .workspace-steps { gap:15px; } .workspace-steps small { font-size:11px; } }
+@media(max-width:700px) { .has-repository .main-content { padding:0 21px; } .has-repository .page-heading { align-items:flex-start; flex-direction:column; padding:28px 0 24px; gap:17px; } .has-repository .page-heading h1 { font-size:34px; letter-spacing:-1.4px; } .workspace-intro { font-size:14px; } .workspace-steps { gap:10px; padding-bottom:24px; } .workspace-steps li { flex-direction:column; align-items:flex-start; gap:8px; padding-top:11px; } .workspace-steps strong { font-size:12px; line-height:1.4; } .workspace-steps small { display:none; } .workspace-steps li>span { width:27px; height:27px; font-size:10px; } .has-repository .repository-card { padding:20px 18px 10px; } .has-repository .repository-title h2 { font-size:24px; } .has-repository .repo-owner { font-size:12px; } .has-repository .repository-title { gap:10px; } .has-repository .repo-icon { display:none; } .has-repository .status-badge { font-size:10px; padding:6px 8px; } .has-repository .repo-index-details>summary { gap:9px; font-size:12px; flex-wrap:wrap; } .has-repository .repo-index-details>summary small { font-size:10px; } .has-repository .section-heading h2 { font-size:25px; } .has-repository .question-composer textarea { font-size:17px; padding:19px; } .has-repository .composer-toolbar { padding:10px; gap:8px; } .has-repository .composer-toolbar .primary { font-size:12px; padding:0 12px; } .has-repository .answer-options summary { font-size:11px; } .has-repository .keyboard-hint { display:none; } .has-repository .question-suggestions { flex-wrap:wrap; } .has-repository .question-suggestions button { font-size:12px; padding:9px 12px; } .has-repository .investigation-topline { padding:15px 18px; } .has-repository .investigation-question { font-size:20px; padding:21px 18px; } .has-repository .result-tabs { padding:10px 12px; gap:4px; } .has-repository .result-tabs button { font-size:12px; padding:9px 10px; } .has-repository .result-panel { padding:24px 19px; } .has-repository .explanation-heading h2,.has-repository .view-intro h2 { font-size:23px; } .has-repository .answer-prose { font-size:16px; } .has-repository .answer-trail ol { grid-template-columns:1fr; } .has-repository .answer-source-footer { padding:15px 18px; font-size:11px; flex-wrap:wrap; } .has-repository .source-inspector { padding:22px 19px; } .has-repository .loading-investigation { padding:22px 18px; } }
+.has-repository .inspector-title,.has-repository .inspector-type,.has-repository .source-metadata,.has-repository .source-kind { font-size:11px; }
+.has-repository .source-metadata>span,.has-repository .source-excerpt>span { font-size:11px; }
+.has-repository .source-count { font-size:11px; }
+/* Selected tabs use a filled pill; counts remain readable at every size. */
+.has-repository .result-tabs button[aria-selected=true]::after { content:none; }
+.has-repository .result-tabs button>span { display:inline-flex; align-items:center; justify-content:center; min-width:25px; padding:3px 6px; margin-left:3px; border-radius:5px; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; line-height:1.2; letter-spacing:.3px; font-variant-numeric:tabular-nums; background:#e3e9da; color:#294934; }
+.has-repository .result-tabs button[aria-selected=true]>span { background:#ffffff24; color:#fff9ed; }
+.has-repository .question-composer textarea { resize:none; }
+.has-repository .investigation-topline>span { color:#f3f2e5; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; letter-spacing:1px; gap:10px; }
+.has-repository .investigation-topline>span>svg { color:#d3dfc8; width:18px; height:18px; opacity:1; }
+.has-repository .investigation-topline time { font-size:12px; color:#d7e1ce; }
+/* Timeline records use readable sans-serif type and stronger ink contrast. */
+.has-repository .view-intro h2 { color:var(--color-forest); letter-spacing:-.7px; }
+.has-repository .view-intro p { font-family:'DM Sans',sans-serif; font-size:15px; line-height:1.75; color:#46584b; max-width:65ch; margin-bottom:30px; }
+.has-repository .timeline { margin:28px 0 10px; padding-left:8px; }
+.has-repository .timeline li { padding:0 0 32px 27px; border-left-color:#becdb9; }
+.has-repository .timeline time { font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:#665038; margin-bottom:10px; letter-spacing:0; }
+.has-repository .timeline .source-kind { display:inline-block; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:.8px; color:#365740; background:#e7eddf; padding:4px 7px; border-radius:4px; }
+.has-repository .timeline a { display:block; font-family:'DM Sans',sans-serif; font-size:18px; font-weight:600; letter-spacing:-.2px; line-height:1.6; color:#263f30; max-width:68ch; margin-top:10px; overflow-wrap:anywhere; text-decoration:underline; text-decoration-color:transparent; text-underline-offset:4px; }
+.has-repository .timeline a:hover { color:#865135; text-decoration-color:currentColor; }
+.has-repository .timeline-dot { background:#426c50; box-shadow:0 0 0 5px #edf1e6; top:6px; }
+@media(max-width:700px) { .has-repository .timeline a { font-size:16px; } .has-repository .view-intro p { font-size:14px; } }
+/* A legible source map with type-specific cards and a clear reading guide. */
+.has-repository .graph-map-heading { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:15px 18px; background:#edf1e6; border:1px solid #cbd6c5; border-bottom:0; border-radius:10px 10px 0 0; }
+.has-repository .graph-map-heading>span:first-child { font-size:11px; font-weight:700; letter-spacing:1px; color:#284d36; white-space:nowrap; }
+.has-repository .graph-map-heading>span:last-child { font-size:12px; line-height:1.5; color:#4d604f; text-align:right; }
+.has-repository .graph-canvas { border-color:#cbd6c5; background-color:#fafbf5; background-image:radial-gradient(#bdcbb84d .8px,transparent .8px); background-size:20px 20px; border-radius:0 0 10px 10px; scrollbar-color:#8c9f83 #e7ebdf; scrollbar-width:thin; }
+.has-repository .graph-canvas:focus-visible { outline:2px solid #456d4c; outline-offset:3px; }
+.has-repository .graph-column-label { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; fill:#425c45; }
+.has-repository .connection-path { stroke:#849d7d; stroke-width:1.6; opacity:.8; }
+.has-repository .connection-path.is-focused { stroke:#34634a; stroke-width:2.2; opacity:1; }
+.has-repository .graph-arrow { fill:#66845d; stroke:#66845d; }
+.has-repository .graph-node rect { fill:#fffefa; stroke:#adbea4; stroke-width:1.2; rx:10px; }
+.has-repository .graph-node-type { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; fill:#5c7059; letter-spacing:.8px; }
+.has-repository .graph-node-label { font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; fill:#253e2d; }
+.has-repository .graph-node[data-type=repository] rect { fill:#254b39; stroke:#254b39; }
+.has-repository .graph-node[data-type=repository] .graph-node-type { fill:#c3d5b8; }
+.has-repository .graph-node[data-type=repository] .graph-node-label { fill:#fff7e8; }
+.has-repository .graph-node[data-type=person] rect { fill:#eef2ee; stroke:#b4c5bd; }
+.has-repository .graph-node[data-type=commit] rect { fill:#fbefdf; stroke:#cbb38d; }
+.has-repository .graph-node[data-type=pull_request] rect,.has-repository .graph-node[data-type=issue] rect,.has-repository .graph-node[data-type=comment] rect { fill:#f7eae2; stroke:#cbb09e; }
+.has-repository .graph-node:hover rect,.has-repository .graph-node:focus-visible rect,.has-repository .graph-node.focused rect { stroke:#98613d; stroke-width:2.5; }
+.has-repository .graph-stats { display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px; font-family:'DM Sans',sans-serif; font-size:13px; color:#314c36; padding:17px 2px; font-weight:600; }
+.has-repository .graph-stats>span:last-child { margin-left:auto; font-size:12px; color:#4b5f4b; font-weight:400; }
+.has-repository .graph-text { border-top:1px solid #d4decb; border-bottom:1px solid #d4decb; padding:4px 0; }
+.has-repository .graph-text summary { font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; color:#294a34; padding:13px 2px; }
+.has-repository .connection-edges>div { font-family:'DM Sans',sans-serif; font-size:13px; color:#344e38; padding:13px 4px; border-color:#d8e0d0; gap:10px; }
+.has-repository .connection-edges span { color:#294631; white-space:normal; overflow-wrap:anywhere; }
+.has-repository .connection-edges small { font-size:11px; color:#6b5138; background:#f0e9dc; padding:4px 7px; border-radius:4px; }
+@media(max-width:700px) { .has-repository .graph-map-heading { align-items:flex-start; flex-direction:column; gap:6px; padding:13px; } .has-repository .graph-map-heading>span:last-child { text-align:left; font-size:11px; } .has-repository .graph-stats>span:last-child { width:100%; margin-left:0; } .has-repository .graph-stats { font-size:13px; } }
+.has-repository #panel-graph>.text-button { font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; color:#2a573c; padding:14px 0 4px; }
+.has-repository .repo-icon { display:grid; place-items:center; flex:0 0 43px; width:43px; height:43px; padding:0; line-height:0; }
+.has-repository .repo-icon>svg { display:block; width:24px; height:24px; margin:0; }
+@media(max-width:700px) { .has-repository .repo-icon { display:none; } }
+/* Raised source cards retain a front-facing reading surface. */
+.has-repository .graph-canvas { background:linear-gradient(145deg,#f7faf1,#e7eee0); box-shadow:inset 0 -12px 30px #3c603110; }
+.has-repository .graph-node rect { filter:drop-shadow(0 4px 4px #233e2c12); }
+.has-repository .graph-card-depth { fill:#bcccb0; stroke:#9caf8e; stroke-width:.8; }
+.has-repository .graph-node[data-type=repository] .graph-card-depth { fill:#153628; stroke:#153628; }
+.has-repository .graph-node[data-type=person] .graph-card-depth { fill:#baccc3; stroke:#9bb0a4; }
+.has-repository .graph-node[data-type=commit] .graph-card-depth { fill:#d4bc98; stroke:#baa078; }
+.has-repository .graph-card-shadow { fill:#294b31; opacity:.10; }
+.has-repository .graph-card-glint { fill:none; stroke:#ffffff99; stroke-width:1.4; stroke-linecap:round; pointer-events:none; }
+.has-repository .graph-node:hover rect,.has-repository .graph-node:focus-visible rect { filter:drop-shadow(0 5px 5px #24442f26); }
+.has-repository .graph-edge-caption rect { fill:#f9fbf3; stroke:#b6c6ac; stroke-width:.8; }
+.has-repository .graph-edge-caption text { font-family:'DM Sans',sans-serif; font-weight:600; font-size:10px; fill:#35523b; letter-spacing:0; }
+.has-repository .connection-path { stroke-width:1.8; }
+.has-repository .graph-reading-note { color:#445b46; font-size:13px; line-height:1.8; margin:0 0 16px; padding:13px 16px; background:#edf2e5; border-radius:8px; }
+.has-repository .graph-reading-note strong { display:block; color:#294a33; font-weight:700; }
+.has-repository .graph-reading-note em { font-style:normal; font-weight:600; color:#785235; }
+/* Keep the map viewport and source cards stable when a node loads a new neighborhood. */
+.has-repository .graph-canvas { height:430px; max-height:60vh; min-height:300px; overflow:auto; overscroll-behavior:contain; scrollbar-gutter:stable; }
+.has-repository .graph-canvas svg { flex:none; max-width:none; max-height:none; }
+.has-repository .connection-path,.has-repository .connection-path.is-focused { stroke-width:1.5; stroke-dasharray:none; animation:none; opacity:1; stroke-linejoin:round; }
+.has-repository .graph-edge-caption text { font-size:9px; }
+@media(max-width:700px) { .has-repository .graph-canvas { height:360px; min-height:280px; } }
+/* The cursor companion persists above navigation and repository drawers. */
+.branch-companion,.branch-companion.cursor-following { z-index:60; filter:none; }
+/* Answer, supporting sources, and review details have distinct reading surfaces. */
+.has-repository .explanation-heading { gap:13px; margin-bottom:23px; align-items:center; }
+.has-repository .explanation-heading .eyebrow { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; color:#607651; letter-spacing:1px; margin-bottom:7px; }
+.has-repository .explanation-heading h2 { font-size:29px; line-height:1.25; color:#203e2e; }
+.has-repository .answer-icon { background:#254b39; color:#f3f5e6; width:39px; height:39px; border-radius:11px; display:grid; place-items:center; flex-shrink:0; }
+.has-repository .answer-icon.abstained { background:#f2e3c8; color:#785126; }
+.has-repository .copy-button { width:36px; height:36px; border:1px solid #cbd6c0; border-radius:8px; color:#41623f; }
+.has-repository .answer-prose { background:#edf3e8; border:1px solid #cfddc6; border-left:4px solid #3b6c46; border-radius:0 10px 10px 0; padding:22px 24px; margin:0 0 28px; max-width:none; font-size:18px; line-height:1.85; color:#243e2c; }
+.has-repository .answer-prose p { margin:0 0 17px; line-height:1.85; }
+.has-repository .answer-prose p:last-child { margin-bottom:0; }
+.has-repository .answer-prose a { display:inline-block; background:#d7e5cc; color:#25492e; padding:0 5px; border-radius:4px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:700; line-height:1.6; margin:0 2px; }
+.has-repository .trail-heading>span { font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; letter-spacing:.8px; color:#3e593d; }
+.has-repository .trail-heading small { font-family:'DM Sans',sans-serif; font-size:12px; color:#5c6d54; }
+.has-repository .answer-trail { margin:0 0 28px; }
+.has-repository .trail-source { background:#f6f8f0; border-color:#cbd9bd; min-height:92px; padding:18px; box-shadow:none; }
+.has-repository .trail-source.change { background:#f6ead8; border-color:#d7be97; }
+.has-repository .trail-source.discussion { background:#f6e8e0; border-color:#d6b8a4; }
+.has-repository .trail-source small { color:#765438; font-size:12px; font-weight:600; }
+.has-repository .trail-source strong { color:#3e422b; font-size:16px; line-height:1.55; }
+.has-repository .trail-glyph { font-size:20px; color:#8b633c; }
+.has-repository .trail-source:hover { transform:none; border-color:#9c7348; box-shadow:0 3px 12px #6d4c2010; }
+.has-repository .answer-review { padding:20px; border:1px solid #d7dfcc; background:#f8f9f2; border-radius:10px; margin:24px 0; }
+.has-repository .answer-review h3 { font-family:'DM Sans',sans-serif; font-size:15px; font-weight:700; color:#355135; margin:0 0 14px; }
+.has-repository .answer-review .answer-assessment { border:0; padding:0; margin:0 0 13px; gap:9px; }
+.has-repository .assessment-badge { font-family:'DM Sans',sans-serif; font-size:12px; color:#315d37; background:#e1ebd8; padding:7px 10px; border-radius:6px; }
+.has-repository .temporal-badge { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#76502d; background:#f0e4ce; padding:7px 10px; border-radius:6px; }
+.has-repository .answer-review .assessment-reason,.has-repository .answer-review .temporal-reason { font-family:'DM Sans',sans-serif; font-size:14px; line-height:1.8; color:#4c5c43; margin:11px 0 0; }
+.has-repository .claim-details summary { font-family:'DM Sans',sans-serif; font-weight:600; font-size:14px; color:#335c3d; }
+.has-repository .source-inspector { background:#f0f4e9; }
+.has-repository .inspector-title { background:#254b39; color:#f0f4e4; padding:14px 15px; border-radius:8px; margin:13px 0 18px; }
+.has-repository .inspector-title>span,.has-repository .inspector-title svg,.has-repository .source-count { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#f0f4e4; }
+.has-repository .inspector-close { color:#4b6846; font-family:'DM Sans',sans-serif; font-size:13px; }
+.has-repository .source-switcher { gap:7px; margin-bottom:23px; }
+.has-repository .source-switcher button { font-family:'DM Sans',sans-serif; font-size:13px; min-width:34px; min-height:34px; font-weight:600; background:#fbfcf5; border:1px solid #cbd7be; color:#47633e; }
+.has-repository .source-switcher button.selected { background:#254b39; color:#fff8e8; border-color:#254b39; }
+.has-repository .inspector-type { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; color:#8b623b; letter-spacing:1px; }
+.has-repository .source-inspector h3 { font-size:25px; color:#28432f; margin:10px 0 18px; }
+.has-repository .source-metadata,.has-repository .source-metadata>span { font-family:'DM Sans',sans-serif; font-size:12px; color:#4c6248; line-height:1.7; }
+.has-repository .source-excerpt { background:#fffef9; border-color:#c9d7bd; margin-top:22px; }
+.has-repository .source-excerpt>span { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:.8px; color:#49653e; background:#e5edda; padding:10px 12px; display:block; }
+.has-repository .source-excerpt pre { font-size:13px; line-height:1.9; color:#2c422a; padding:14px; }
+.has-repository .retrieval-reason,.has-repository .retrieval-reason span { font-family:'DM Sans',sans-serif; font-size:13px; line-height:1.7; color:#506548; }
+.has-repository .source-original { display:flex; align-items:center; justify-content:space-between; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; padding:13px 14px; background:#254b39; color:#fff9eb; border:0; border-radius:8px; margin-top:20px; }
+.has-repository .source-original:hover { background:#365e43; color:#fff9eb; }
+.has-repository .result-notes summary,.has-repository .result-notes p { font-family:'DM Sans',sans-serif; font-size:13px; line-height:1.8; color:#516549; }
+@media(max-width:700px) { .has-repository .explanation-heading h2 { font-size:23px; } .has-repository .answer-prose { font-size:16px; padding:19px 17px; } .has-repository .answer-review { padding:17px; } .has-repository .trail-source strong { font-size:15px; } .has-repository .trail-heading small { font-size:11px; } }

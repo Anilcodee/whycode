@@ -1,0 +1,66 @@
+/* Forest ink, warm paper, and copper. Bold type gives each chapter a clear entry. */
+body { font-family: 'DM Sans', sans-serif; color:var(--color-ink); }
+.brand { font-weight:700; }
+.is-home .hero-title { font-family:'Manrope',sans-serif; font-weight:700; font-size:clamp(72px,7.7vw,112px); line-height:1.05; letter-spacing:-5px; color:var(--color-heading); }
+.is-home .hero-title em { font-family:var(--display); font-weight:400; letter-spacing:-2px; }
+.is-home .hero-description { color:#4b5f53; font-weight:500; }
+.hero-kicker,.repo-url-label,.story-navigation a,.topbar-actions button,.nav-story-link { font-weight:600; }
+.journey-copy h2,.journey-closing h2 { font-family:'Manrope',sans-serif; font-weight:700; font-size:clamp(46px,4.7vw,67px); line-height:1.13; letter-spacing:-2.8px; color:var(--color-heading); }
+.journey-copy h2 em,.journey-closing h2 em { font-weight:400; font-size:1.16em; line-height:1; letter-spacing:-1px; }
+.journey-margin-note strong,.object-explanation strong,.closing-principles strong { font-weight:700; }
+.story-navigation { border-top:2px solid #244b3a; }
+.story-navigation a { color:#244b3a; }
+.example-topline { background:var(--color-forest); color:#e9eddf; }
+.example-led { background:#d6b17e; }
+.example-question h3 { font-family:'Manrope',sans-serif; font-weight:700; font-size:29px; letter-spacing:-1px; color:#213f31; }
+.example-switch button[aria-pressed=true] { background:#274c3c; color:#fff9ec; border-color:#274c3c; font-weight:600; }
+.example-response:not(.example-withheld) { background:var(--color-forest); border-left-color:#bd956b; }
+.example-response:not(.example-withheld) .example-response-label { color:#cbd9bf; font-weight:600; }
+.example-response:not(.example-withheld) p { color:#f1f3e8; }
+.example-citation { background:#43634e; color:#fff7e8; }
+.journey-closing { background:var(--color-forest); box-shadow:0 0 0 100vmax var(--color-forest); clip-path:inset(0 -100vmax); border:0; margin-top:30px; padding-top:85px!important; padding-bottom:75px!important; }
+.journey-closing h2 { color:#f7f2e7; font-size:clamp(50px,5.8vw,83px); }
+.journey-closing h2 em { color:var(--color-copper-light); }
+.journey-closing .journey-eyebrow,.journey-closing .closing-mark { color:#c2d1b2; }
+.journey-closing>p:not(.journey-eyebrow) { color:#d0d9c9; }
+.journey-closing .closing-action { background:#efe5d1; color:var(--color-forest); font-weight:700; border:1px solid #efe5d1; }
+.journey-closing .closing-action:hover { background:#fff9ee; color:var(--color-forest); }
+.journey-closing .closing-principles>div { border-color:#ffffff30; }
+.journey-closing .closing-principles strong { color:#f7f2e7; }
+.journey-closing .closing-principles p { color:#c9d3c1; }
+.journey-closing .closing-principles>div>span { color:var(--color-copper-light); }
+.site-footer { background:var(--color-forest-deep); box-shadow:0 0 0 100vmax var(--color-forest-deep); clip-path:inset(0 -100vmax); margin-top:0; padding-top:55px; color:#c7d2c2; border:0; }
+.site-footer .brand,.site-footer .brand-symbol { color:#f0ecdf; }
+.site-footer .wordmark-code { color:var(--color-copper-light); }
+.site-footer .footer-identity p { color:#e8eddf; }
+.site-footer .footer-links>span,.site-footer .footer-note>span:first-child { color:#aabc9f; font-weight:600; }
+.site-footer .footer-links button { color:#e1e7da; font-weight:500; }
+.site-footer .footer-links button:hover,.site-footer .footer-bottom a:hover { color:#e3ba90; }
+.site-footer .footer-bottom { border-color:#ffffff24; }
+.site-footer .service-status { color:#c7d2c2; }
+@media(max-width:850px) { .is-home .hero-title { font-size:88px; letter-spacing:-4px; } .journey-copy h2 { font-size:55px; } }
+@media(max-width:580px) { .is-home .hero-title { font-size:65px; letter-spacing:-3px; } .journey-copy h2 { font-size:43px; letter-spacing:-1.8px; } .journey-closing h2 { font-size:45px; letter-spacing:-1.8px; } .example-question h3 { font-size:26px; } }
+@media(max-width:350px) { .is-home .hero-title { font-size:56px; } .journey-copy h2,.journey-closing h2 { font-size:38px; } }
+/* Keep section backgrounds, the history trail, and readable content on separate layers. */
+.main-content { z-index:auto; }
+.history-snake { z-index:1; }
+.opening-scene>.hero-copy,.connect-card,.story-navigation,.journey-section>*,.site-footer>* { position:relative; z-index:2; }
+.journey-closing,.site-footer { background:transparent; box-shadow:none; clip-path:none; }
+.journey-closing::before,.site-footer::before { content:''; position:absolute; top:0; bottom:0; left:50%; width:100vw; transform:translateX(-50%); background:var(--color-forest); z-index:0; pointer-events:none; }
+.site-footer { position:relative; }
+.site-footer::before { background:var(--color-forest-deep); }
+.snake-spine { stroke:#7f9e8b; opacity:.58; }
+/* One logo palette on every surface; paper keeps its colors legible on forest. */
+.site-footer .brand { background:var(--color-paper); color:#284b40; padding:9px 14px; border-radius:9px; width:fit-content; }
+.site-footer .brand-symbol { color:var(--color-brand); }
+.site-footer .wordmark-code { color:var(--color-copper); }
+.journey-closing .closing-mark { display:grid; place-items:center; width:76px; height:58px; border-radius:12px; background:var(--color-paper); transform:none; letter-spacing:normal; }
+.closing-code-mark { width:55px; height:38px; color:var(--color-brand); stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+.closing-code-mark .mark-dot { color:var(--color-copper); }
+.brand-symbol { color:var(--color-brand); }
+.footer-technology dl { margin:0 0 23px; display:grid; gap:14px; width:100%; }
+.footer-technology dl>div { display:flex; align-items:baseline; justify-content:space-between; gap:18px; }
+.footer-technology dt { font-size:14px; font-weight:700; color:#e8eddf; }
+.footer-technology dd { margin:0; font-size:11px; color:#b7c7b0; text-align:right; }
+.footer-technology a:hover { color:#e3ba90; }
+@media(min-width:851px) { .footer-main { grid-template-columns:1fr .9fr 1.2fr; gap:45px; } }

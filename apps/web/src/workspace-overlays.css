@@ -1,0 +1,66 @@
+/* Help and the repository archive share the application's reading hierarchy. */
+.help-dialog { padding:0; max-width:650px; width:calc(100% - 32px); max-height:90svh; overflow:auto; border:1px solid #bdcbb7; border-radius:17px; background:#fffdf7; box-shadow:0 24px 90px #132d2740; }
+.help-header { position:relative; background:var(--color-forest); padding:29px 32px 27px; color:#f4f0e4; }
+.help-header .dialog-close { top:17px; right:18px; color:#edf3e3; border:1px solid #ffffff35; border-radius:8px; width:33px; height:33px; }
+.help-code-mark { width:44px; height:30px; stroke:#d5e0c9; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; margin-bottom:20px; }
+.help-code-mark .mark-question { stroke:#d3a57e; }.help-code-mark .mark-dot { color:#d3a57e; }
+.help-dialog .help-header .eyebrow { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; color:#c4d3b8; letter-spacing:1.3px; margin:0 0 13px; }
+.help-dialog .help-header h2 { font-family:'Manrope',sans-serif; font-size:33px; font-weight:700; letter-spacing:-1.1px; line-height:1.15; margin:0 0 14px; color:#f7f1e5; }
+.help-header h2 em { font-family:var(--display); font-size:1.18em; font-weight:400; color:#d9ae86; }
+.help-dialog .help-header>p:last-child { font-family:'DM Sans',sans-serif; color:#d2ddc8; font-size:14px; line-height:1.7; margin:0; }
+.help-content { padding:26px 30px 22px; }
+.help-dialog .help-steps { list-style:none; padding:0; margin:0; display:grid; gap:23px; }
+.help-dialog .help-steps li { display:flex; align-items:flex-start; gap:15px; padding:0; }
+.help-step-number { display:grid; place-items:center; flex:0 0 33px; height:33px; border-radius:9px; background:#e6eddd; color:#3e633e; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; }
+.help-dialog .help-steps h3 { font-family:'DM Sans',sans-serif; font-size:16px; font-weight:700; color:#274631; line-height:1.5; margin:2px 0 7px; }
+.help-dialog .help-steps p { font-family:'DM Sans',sans-serif; font-size:14px; color:#4c5e46; line-height:1.8; margin:0; }
+.help-data { background:#f1eadc; border:1px solid #dfceb4; border-radius:10px; padding:17px 18px; margin-top:27px; }
+.help-dialog .help-data h3 { display:flex; align-items:center; gap:9px; color:#5e4b31; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; margin:0 0 10px; }
+.help-dialog .help-data p { font-family:'DM Sans',sans-serif; font-size:13px; line-height:1.8; color:#62543e; margin:0; }
+.help-data details { border-top:1px solid #dacaad; margin-top:12px; padding-top:10px; }
+.help-data summary { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12px; font-weight:600; color:#6b5033; cursor:pointer; padding:4px 0; }
+.help-data details[open] p { margin-top:10px; }
+.help-actions { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:19px 30px 23px; border-top:1px solid #dfe4d5; background:#fffdf7; }
+.help-actions>span { font-size:11px; color:#65775a; line-height:1.6; max-width:190px; }
+.help-dialog .help-actions .primary { min-height:45px; padding:0 18px; gap:18px; font-family:'DM Sans',sans-serif; font-weight:600; font-size:14px; white-space:nowrap; }
+.sidebar { width:430px; max-width:calc(100vw - 16px); padding:25px 25px 18px; background:#f7f6ee; box-shadow:-18px 0 65px #17362720; border-left:1px solid #c9d3bf; }
+.sidebar-brand { padding-bottom:21px; border-color:#d6decc; }
+.sidebar-brand .brand { font-size:26px; }
+.sidebar-brand .icon-button { color:#476444; border:1px solid #c7d2bc; border-radius:8px; width:34px; height:34px; }
+.sidebar .archive-heading { padding-top:25px; }
+.sidebar .archive-heading .eyebrow { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; color:#718063; letter-spacing:1.3px; margin-bottom:9px; }
+.sidebar .archive-heading h2 { font-family:'Manrope',sans-serif; color:#244632; font-size:29px; font-weight:700; letter-spacing:-1px; line-height:1.25; }
+.archive-description { font-size:13px; color:#65745a; line-height:1.7; margin:10px 0 18px; }
+.archive-connect { display:flex; align-items:center; gap:10px; width:100%; background:#254b39; color:#fff8e9; border-radius:9px; padding:13px 15px; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; }
+.archive-connect>svg:last-child { margin-left:auto; }
+.archive-connect:hover { background:#365d43; }
+.sidebar .nav-section-label { padding:27px 0 11px; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; color:#39583c; letter-spacing:0; }
+.archive-section-count { display:grid; place-items:center; min-width:24px; height:23px; border-radius:6px; background:#e5ecda; color:#41603b; font-size:11px; }
+.repository-list { display:grid; gap:7px; padding-top:12px; }
+.sidebar .repo-nav { padding:13px; border:1px solid #dbe2d1; border-radius:10px; background:#fffef8; gap:12px; }
+.sidebar .repo-nav:hover { padding-left:13px; border-color:#9bb18b; background:#edf2e5; }
+.sidebar .repo-nav>svg { color:#4e714a; }
+.sidebar .repo-nav strong { font-family:'DM Sans',sans-serif; font-size:15px; font-weight:700; color:#2f4c33; line-height:1.5; }
+.sidebar .repo-nav small { font-family:'DM Sans',sans-serif; font-size:12px; color:#66775a; margin-top:2px; }
+.repo-nav-state { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; color:#5c754a; white-space:nowrap; }
+.sidebar .repo-nav.selected { background:#254b39; border-color:#254b39; padding-left:13px; }
+.sidebar .repo-nav.selected strong { color:#fff8e8; }
+.sidebar .repo-nav.selected small,.sidebar .repo-nav.selected .repo-nav-state,.sidebar .repo-nav.selected>svg { color:#cbdabb; }
+.sidebar .repo-dot { flex-shrink:0; }
+.history-list { display:grid; gap:8px; }
+.sidebar .history-button { font-family:'DM Sans',sans-serif; padding:13px; gap:11px; border:1px solid #dce3d3; border-radius:9px; background:#fffdf6; color:#334d36; line-height:1.6; }
+.sidebar .history-button>svg { color:#728364; margin-top:3px; flex-shrink:0; }
+.sidebar .history-button>span { display:block; min-width:0; overflow:visible; }
+.sidebar .history-button strong { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; font-weight:600; font-size:14px; color:#344c35; }
+.sidebar .history-button small { display:block; font-family:'DM Sans',sans-serif; color:#718065; font-size:11px; margin-top:7px; line-height:1.5; }
+.sidebar .history-button:hover,.sidebar .history-button.selected { background:#eaf0e0; border-color:#b1c59d; }
+.sidebar .clear-history { font-family:'DM Sans',sans-serif; font-size:12px; color:#8b583e; padding:14px 2px; width:fit-content; }
+.sidebar .clear-history:hover { color:#643a27; text-decoration:underline; text-underline-offset:4px; }
+.sidebar .sidebar-empty { background:#ebefdf; border:1px dashed #c6d3b7; border-radius:9px; padding:17px; font-family:'DM Sans',sans-serif; font-size:13px; line-height:1.8; color:#65765b; margin:0; }
+.sidebar-bottom { padding-top:25px; }
+.sidebar .workspace-note { color:#476143; border-color:#d6dfca; font-family:'DM Sans',sans-serif; font-size:13px; }
+.sidebar .workspace-note small { font-family:'DM Sans',sans-serif; font-size:11px; color:#778569; margin-top:4px; }
+.sidebar .sidebar-footer { font-family:'DM Sans',sans-serif; font-size:10px; color:#78856d; border-color:#d6dfca; }
+@media(max-width:580px) { .help-header { padding:26px 23px; } .help-dialog .help-header h2 { font-size:29px; } .help-content { padding:23px 20px; } .help-dialog .help-steps { gap:22px; } .help-dialog .help-steps li { gap:12px; } .help-step-number { flex-basis:28px; height:28px; font-size:11px; } .help-dialog .help-steps p { font-size:13px; } .help-actions { flex-direction:column; align-items:stretch; gap:13px; padding:18px 20px 22px; } .help-actions>span { max-width:none; text-align:center; } .help-dialog .help-actions .primary { justify-content:center; } .sidebar { padding:21px 18px 16px; } .sidebar-brand .brand { font-size:25px; } .sidebar .archive-heading h2 { font-size:27px; } }
+.help-header .dialog-close:hover,.help-header .dialog-close:focus-visible { background:#ffffff18; color:#fff8eb; border-color:#ffffff65; }
+.help-header .dialog-close:active { background:#ffffff26; }

@@ -1,0 +1,28 @@
+/* An evidence orrery: horizontal labels, dimensional nodes, and quiet orbital paths. */
+.evidence-universe{position:relative;width:100%;height:auto;aspect-ratio:520/385;margin:11px 0 4px;perspective:1100px;--orbit-x:0deg;--orbit-y:0deg}
+.orbit-map{display:block;width:100%;height:auto;overflow:visible;transform:rotateX(var(--orbit-x)) rotateY(var(--orbit-y));transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.universe-shadow{fill:#778764;opacity:.09;filter:blur(7px)}
+.orbit-guides{stroke:#bfc8b2;stroke-width:.7;opacity:.65}
+.orbital-ring{stroke-width:1;transition:stroke .4s,stroke-width .4s,opacity .4s;opacity:.45}
+.ring-code{stroke:#7e9b74}.ring-commit{stroke:#b39b72}.ring-discussion{stroke:#bc9582}
+.orbital-ring.ring-selected{stroke-width:1.6;opacity:.95}
+.orbital-current{stroke:#74996b;stroke-width:2;stroke-dasharray:2 41;stroke-linecap:round;opacity:.65}
+.motion-enabled .orbital-current{animation:orbit-trace 19s linear infinite}
+@keyframes orbit-trace{to{stroke-dashoffset:-430}}
+.lens-mark{font-family:var(--mono);font-size:34px;letter-spacing:-3px;fill:#4f6e4a;paint-order:stroke;stroke:#ffffff80;stroke-width:1}
+.lens-glint{stroke:#fffefb;stroke-width:2;stroke-linecap:round;opacity:.85}
+.orb-aura{fill:none;stroke:#8aab7d;stroke-width:1;opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.8);transition:opacity .4s,transform .5s}
+.commit-orb .orb-aura{stroke:#bea265}.discussion-orb .orb-aura{stroke:#bf947a}
+.orbital-node[data-highlight=true] .orb-aura{opacity:.65;transform:scale(1)}
+.orb-shadow{fill:#5d6c44;opacity:.13;filter:blur(2px)}
+.orb-symbol{stroke:#fffdf2;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.orb-label-line{stroke:#aebda0;stroke-width:.8;fill:none}
+.commit-orb .orb-label-line{stroke:#c4b18c}.discussion-orb .orb-label-line{stroke:#c6ab95}
+.orb-label{font-family:var(--display);font-size:25px;fill:#53694a;letter-spacing:-.1px}
+.orb-detail{font-family:'DM Sans',sans-serif;font-size:10px;fill:#6b785c;letter-spacing:.1px}
+.universe-caption{font-family:var(--display);font-size:17px;font-style:italic;fill:#8b866c}
+.is-home .evidence-object .object-steps{margin-top:13px}
+@media(max-width:850px){.evidence-universe{max-width:490px;margin:14px auto 3px}}
+@media(max-width:580px){.evidence-universe{aspect-ratio:520/385;margin-top:17px}.orb-label{font-size:27px}.orb-detail{font-size:12px}.universe-caption{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.orbit-map{transform:none!important;transition:none!important}.orbital-current{animation:none!important}.orb-aura{transition:none!important}}
+@media(max-width:580px){.orb-detail{font-size:18px}.orb-label{font-size:29px}.universe-caption{font-size:20px}}

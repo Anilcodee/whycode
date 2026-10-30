@@ -1,0 +1,68 @@
+{
+  "testedAt": "2026-10-28T05:09:22.164Z",
+  "repository": "octocat/hello-world",
+  "checks": [
+    "Neo4j connected",
+    "Public repository indexed twice with stable counts and no duplicate graph entities or relationships",
+    "README introduction question returned an answer with source URL, author, date, and valid citations",
+    "Commit, file, person, and repository graph focus returned connected nodes",
+    "Unsupported question abstained",
+    "Hinglish translation and separate web context returned successfully"
+  ],
+  "timings": {
+    "answerMs": 7299,
+    "abstentionMs": 1109,
+    "enhancedAnswerMs": 7714
+  },
+  "indexing": {
+    "first": {
+      "counts": {
+        "commits": 3,
+        "files": 1,
+        "pullRequests": 25,
+        "issues": 12,
+        "comments": 50,
+        "documents": 1
+      },
+      "graph": {
+        "status": "written",
+        "nodes": 0,
+        "relationships": 0
+      },
+      "durationMs": 15313
+    },
+    "second": {
+      "counts": {
+        "commits": 3,
+        "files": 1,
+        "pullRequests": 25,
+        "issues": 12,
+        "comments": 50,
+        "documents": 1
+      },
+      "graph": {
+        "status": "written",
+        "nodes": 0,
+        "relationships": 0
+      },
+      "durationMs": 12187
+    }
+  },
+  "answer": {
+    "text": "The README file was added in the first commit, authored by Cameron423698 [commit:553c2077f0edc3d5dc5d17262f6aa498e69d6f8e].",
+    "citations": [
+      "commit:553c2077f0edc3d5dc5d17262f6aa498e69d6f8e"
+    ],
+    "confidence": "medium",
+    "temporalStatus": "historical",
+    "model": "gemini-3.5-flash-lite"
+  },
+  "enhancements": {
+    "translatedAnswer": "README ko Cameron423698 ne pehle commit mein introduce kiya tha. [commit:553c2077f0edc3d5dc5d17262f6aa498e69d6f8e]",
+    "webResults": 5,
+    "warnings": [
+      "Answers cover the indexed history window and pinned source revision, not every branch or every commit."
+    ]
+  },
+  "status": "passed"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "whycode",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Evidence-backed explanations for unfamiliar codebases.",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm run dev --workspace @whycode/api",
+    "dev:web": "npm run dev --workspace @whycode/web",
+    "build": "npm run build --workspace @whycode/api && npm run build --workspace @whycode/web",
+    "test": "npm run test --workspace @whycode/api && npm run test --workspace @whycode/web",
+    "check": "npm run test && npm run build",
+    "typecheck": "npm run typecheck --workspace @whycode/api && npm run typecheck --workspace @whycode/web",
+    "start": "npm run start --workspace @whycode/api",
+    "verify:live": "node scripts/verify-live.mjs",
+    "evaluate": "node scripts/evaluate.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

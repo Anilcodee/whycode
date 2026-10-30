@@ -1,0 +1,77 @@
+.account-page, .startup-screen { min-height: 100vh; background: #f7f3eb; color: #203b32; }
+.account-page { padding-bottom: 24px; }
+.account-page-header.topbar { justify-content: space-between; }
+.account-return { border: 0; background: none; color: #315b4b; font: 600 14px 'DM Sans', sans-serif; cursor: pointer; padding: 12px 0; }
+.account-return:hover { color: #a55b3c; }
+.account-return:focus-visible { outline: 3px solid #a55b3c; outline-offset: 4px; }
+.account-page-layout { max-width: 1160px; margin: 0 auto; padding: clamp(18px, 3vh, 36px) 40px 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(390px, 510px); gap: clamp(45px, 7vw, 100px); align-items: center; }
+.account-page-story { padding-top: 28px; }
+.account-story-index { font-size: 11px; font-weight: 700; letter-spacing: .14em; color: #93664c; }
+.account-page-story h1 { margin: 27px 0 22px; font: 700 clamp(42px, 5vw, 66px)/1.12 'Manrope', sans-serif; letter-spacing: -.045em; color: #19392e; }
+.account-page-story h1 em { font: 400 1.12em/1 'Instrument Serif', Georgia, serif; color: #a55b3c; letter-spacing: -.025em; }
+.account-page-story > p { max-width: 310px; color: #53675c; font-size: 17px; line-height: 1.7; }
+.account-story-note { margin-top: 60px; padding-top: 21px; border-top: 1px solid #d6ddd0; display: flex; gap: 12px; align-items: center; color: #486253; font-size: 13px; }
+.account-page-card.account-dialog { display: block; position: relative; inset: auto; width: 100%; max-width: none; max-height: none; margin: 0; padding: clamp(24px, 3vw, 32px); overflow: visible; background: #fffdf8; border: 1px solid #d9e1d3; border-radius: 18px; box-shadow: 0 18px 45px #203b320c; }
+.account-page-card .account-eyebrow { color: #846448; font: 700 11px 'DM Sans', sans-serif; letter-spacing: .12em; margin-bottom: 14px; }
+.account-page-card h2 { font: 700 clamp(27px, 3vw, 34px)/1.2 'Manrope', sans-serif; letter-spacing: -.04em; color: #203e32; margin: 0 0 12px; }
+.account-page-card .account-intro { margin: 0; color: #52675a; font: 15px/1.65 'DM Sans', sans-serif; }
+.account-page-card .social-signin { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+.account-page-card .social-signin button { min-height: 46px; gap: 8px; justify-content: center; border: 1px solid #d2dccf; border-radius: 10px; background: #fffefa; color: #244b3a; font: 700 13px 'DM Sans', sans-serif; }
+.account-page-card .social-signin button:hover { background: #edf3e9; border-color: #9bb79e; }
+.account-page-card .social-signin button > span { display: inline-flex; align-items: center; justify-content: center; color: #244b3a; }
+.account-page-card .account-divider { margin: 16px 0 10px; color: #687b6e; }
+.account-page-card .account-form { gap: 8px; }
+.account-page-card .account-form label { color: #304b3c; font-weight: 700; font-size: 13px; }
+.account-page-card .account-form input { min-height: 44px; padding: 10px 12px; border: 1px solid #cfdacc; border-radius: 9px; background: #fffefa; }
+.account-page-card .account-form .primary { min-height: 46px; margin-top: 8px; border-radius: 10px; font-size: 15px; }
+.account-page-card .account-links { margin-top: 12px; }
+.account-page-card .account-links button { color: #246553; font-weight: 700; }
+.account-page-card .account-hint { border-top: 1px solid #e4e9dd; margin-top: 12px; padding-top: 12px; color: #5c6e60; line-height: 1.5; }
+@media (max-width: 800px) { .account-page-layout { grid-template-columns: 1fr; max-width: 590px; gap: 30px; padding-top: 38px; } .account-page-story { padding-top: 0; } .account-page-story h1 { margin: 14px 0 12px; font-size: 40px; } .account-page-story h1 br { display: none; } .account-story-note { margin-top: 24px; } }
+@media (max-width: 480px) { .account-page-header.topbar { padding: 0 22px; } .account-return { font-size: 12px; } .account-page-layout { padding: 24px 20px 0; } .account-page-story h1 { font-size: 34px; } .account-page-card.account-dialog { padding: 25px; } .account-page-card .social-signin { grid-template-columns: 1fr; } }
+.startup-screen { padding: 28px clamp(24px, 5vw, 70px); }
+.startup-content { min-height: 65vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.startup-content h1 { margin: 24px 0 4px; font-size: clamp(24px, 4vw, 36px); }
+.startup-content p { color: #52665c; }
+.startup-spinner { display: block; width: 40px; height: 40px; border: 3px solid #d8e2d4; border-top-color: #246553; border-radius: 50%; animation: startup-spin .8s linear infinite; }
+@keyframes startup-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .startup-spinner { animation: none; border-color: #246553; } }
+.workspace-history-entry { position: relative; }
+.workspace-history-entry .history-button { width: 100%; min-width: 0; padding-right: 48px; }
+.workspace-delete { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 34px; height: 34px; border: 0; border-radius: 8px; color: #315a48; background: transparent; cursor: pointer; font-size: 22px; }
+.workspace-delete:hover { color: #a0472f; background: #f4e8dc; }
+.workspace-delete:focus-visible,.workspace-remove-repository:focus-visible { outline: 3px solid #b6744d; outline-offset: 2px; }
+.workspace-remove-repository { margin: 18px 0 0; padding: 7px 0; border: 0; background: transparent; color: #e0c29f; font: 600 13px 'DM Sans', sans-serif; cursor: pointer; }
+.workspace-remove-repository:hover { color: #fff8e8; text-decoration: underline; }
+.guest-import { margin: 12px 0 22px; padding: 15px; border: 1px solid #cbd9c5; border-radius: 10px; background: #eef4e9; color: #264f3b; }
+.guest-import strong { font-size: 14px; }
+.guest-import p { margin: 6px 0 10px; font-size: 12px; line-height: 1.5; }
+.guest-import button { border: 0; background: transparent; padding: 3px 0; color: #246553; font: 700 12px 'DM Sans', sans-serif; cursor: pointer; }
+.import-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.help-page { max-width: 900px; margin: 0 auto; padding: 72px 36px 100px; color: #244537; }
+.help-page h1 { font: 700 clamp(38px, 5vw, 62px)/1.1 'Manrope', sans-serif; letter-spacing: -.045em; margin: 18px 0; }
+.help-page h1 em { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; color: #a55b3c; }
+.help-page-intro { font-size: 19px; color: #50685a; }
+.help-page ol { list-style: none; padding: 0; margin: 48px 0; border-top: 1px solid #d9e1d3; }
+.help-page li { display: grid; grid-template-columns: 60px 1fr; gap: 18px; padding: 28px 0; border-bottom: 1px solid #d9e1d3; }
+.help-page li > span { color: #a55b3c; font-weight: 700; }
+.help-page h2 { margin: 0 0 10px; font: 700 21px 'Manrope', sans-serif; }
+.help-page p { line-height: 1.7; }
+.help-page li p { margin: 0; color: #50685a; }
+.help-page section { background: #eaf0e5; border-radius: 16px; padding: 28px; margin-bottom: 28px; }
+.help-page section p { margin: 10px 0 0; }
+@media (max-width: 600px) { .help-page { padding: 44px 22px 70px; } .help-page li { grid-template-columns: 38px 1fr; } }
+.workspace-dashboard { margin: 24px 0 36px; padding: 30px; border: 1px solid #d6e0d1; border-radius: 18px; background: #fffdf8; }
+.workspace-dashboard-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.workspace-dashboard-heading h2 { font: 700 27px 'Manrope', sans-serif; margin: 8px 0; color: #203e32; }
+.workspace-dashboard > p { color: #52675a; line-height: 1.6; }
+.workspace-dashboard-repositories { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 20px; }
+.workspace-dashboard-repositories > button { display: flex; align-items: center; gap: 12px; padding: 17px; border: 1px solid #d4dfd0; border-radius: 10px; background: #f7faf3; color: #244b3a; cursor: pointer; text-align: left; }
+.workspace-dashboard-repositories > button:hover { border-color: #56826a; background: #edf4e9; }
+.workspace-dashboard-repositories > button span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.workspace-dashboard-repositories small { display: block; margin-top: 5px; color: #5d7464; }
+.workspace-dashboard-empty { padding: 20px; color: #52675a; background: #f3f6ed; border-radius: 10px; }
+.workspace-dashboard .guest-import { margin-top: 18px; }
+.account-button.account-button-signed-in { display: inline-flex; align-items: center; gap: 9px; padding: 5px 14px 5px 5px; }
+.account-avatar { display: inline-grid; place-items: center; width: 32px; height: 32px; flex: 0 0 32px; border-radius: 50%; background: #945f4e; color: #fffdf8; font: 700 14px 'DM Sans', sans-serif; }
+.account-page-card .social-signin button > span { flex: 0 0 20px; }

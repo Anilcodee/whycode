@@ -1,0 +1,82 @@
+/* A persistent, quiet reading rail and a little branch to follow along. */
+html { scroll-padding-top: 110px; }
+.topbar { position: sticky; top: 0; z-index: 30; background: #f5f2ebee; backdrop-filter: blur(16px); border-bottom: 1px solid #deded180; }
+.is-home .topbar::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 2px; background: var(--color-brand); transform: scaleX(var(--journey-progress, 0)); transform-origin: left; }
+.is-home .journey-section { scroll-margin-top: 20px; }
+.branch-companion { position: fixed; left: 0; top: 0; width: 52px; z-index: 20; pointer-events: none; will-change: transform; transition: transform .18s ease-out; }
+.branch-companion svg { width: 100%; overflow: visible; }
+.branch-body { transform-origin: 32px 75px; }
+.is-travelling .branch-body { animation: branch-stride .4s ease-in-out infinite alternate; }
+.branch-foot { transform-box: fill-box; transform-origin: top center; }
+.is-travelling .foot-left { animation: branch-step .4s ease-in-out infinite alternate; }
+.is-travelling .foot-right { animation: branch-step .4s ease-in-out infinite alternate-reverse; }
+@keyframes branch-stride { to { transform: translateY(-4px) rotate(3deg); } }
+@keyframes branch-step { to { transform: rotate(-18deg); } }
+.is-home .home-story [data-reveal] { opacity: 1 !important; transform: none !important; }
+.motion-enabled [data-scroll-reveal] { transition: opacity .9s ease, transform 1s cubic-bezier(.16,1,.3,1), filter .8s ease; }
+.motion-enabled [data-scroll-reveal]:not([data-visible=true]):not(:focus-within) { opacity: 0; transform: translateY(48px); filter: blur(3px); }
+.motion-enabled .journey-copy[data-visible=true] > * { animation: chapter-arrive .85s cubic-bezier(.16,1,.3,1) both; }
+.motion-enabled .journey-copy[data-visible=true] > :nth-child(2) { animation-delay: .09s; }
+.motion-enabled .journey-copy[data-visible=true] > :nth-child(3) { animation-delay: .18s; }
+.motion-enabled .journey-copy[data-visible=true] > :nth-child(4) { animation-delay: .27s; }
+.motion-enabled .journey-copy[data-visible=true] > :nth-child(5) { animation-delay: .36s; }
+.motion-enabled .closing-principles[data-visible=true] > div { animation: chapter-arrive .8s both; }
+.motion-enabled .closing-principles[data-visible=true] > :nth-child(2) { animation-delay: .12s; }
+.motion-enabled .closing-principles[data-visible=true] > :nth-child(3) { animation-delay: .24s; }
+@keyframes chapter-arrive { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+@media(max-width:1319px) { .branch-companion { width: 30px; } }
+@media(max-width:580px) { .branch-companion { width: 20px; } html { scroll-padding-top: 94px; } .is-home .journey-section { scroll-margin-top: 14px; } }
+@media(prefers-reduced-motion:reduce) { .branch-companion { display: none; } [data-scroll-reveal] { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; } }
+
+.wordmark-code { color: var(--color-copper); }
+.brand .mark-question,.brand .mark-dot { color: var(--color-copper); }
+.topbar-actions .nav-story-link { display:flex; gap:12px; align-items:center; font-size:12px; color:#52665e; padding:12px 0; position:relative; }
+.nav-story-link::after,.help-button::after { content:''; position:absolute; left:0; bottom:4px; width:100%; height:1px; background:var(--color-copper); transform:scaleX(0); transform-origin:left; transition:transform .25s; }
+.nav-story-link:hover::after,.help-button:hover::after { transform:scaleX(1); }
+.help-button { position:relative; }
+.account-button { transition:background-color .18s ease,border-color .18s ease,color .18s ease; }
+.account-button:hover { background:#e8ece3; border-color:#829782; color:#244b3d; transform:none; box-shadow:none; }
+.account-button:active { background:#dce4d7; transform:none; }
+.branch-companion { height:min(62vh,540px); }
+.branch-companion svg { height:100%; }
+.history-rail { stroke:var(--color-brand); stroke-width:2; opacity:.27; }
+.history-side { stroke:var(--color-copper); opacity:.35; }
+.history-car { filter:drop-shadow(0 2px 2px #263a3525); }
+.site-footer { margin-top:70px; border-top:1px solid #cdd4c7; padding:52px 0 22px; color:#52665e; width:100%; grid-column:1/-1; }
+.footer-main { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:60px; padding-bottom:48px; }
+.footer-identity p { font-family:var(--display); font-size:29px; line-height:1.2; margin:20px 0 0; color:#284b40; }
+.footer-links,.footer-note { display:flex; flex-direction:column; align-items:flex-start; }
+.footer-links>span,.footer-note>span:first-child { font-family:var(--mono); font-size:9px; letter-spacing:1.2px; margin:7px 0 19px; }
+.footer-links button { padding:8px 0; font-size:14px; text-align:left; }
+.footer-links button:hover { color:var(--color-copper); transform:translateX(3px); }
+.footer-note p { font-size:15px; max-width:280px; margin:0 0 20px; }
+.footer-bottom { border-top:1px solid #deded1; padding-top:22px; display:flex; justify-content:space-between; gap:20px; font-size:11px; }
+.footer-bottom a:hover { color:var(--color-copper); }
+@media(max-width:850px) { .footer-main { gap:30px; grid-template-columns:1fr 1fr; } .footer-note { grid-column:1/-1; } .footer-note p { max-width:440px; } }
+@media(max-width:580px) { .nav-story-link { display:none!important; } .site-footer { margin-top:35px; padding-top:35px; } .footer-main { grid-template-columns:1fr; gap:28px; padding-bottom:30px; } .footer-identity p { font-size:30px; } .footer-bottom { flex-wrap:wrap; font-size:10px; } .footer-bottom>span:nth-child(2) { order:3; width:100%; } }
+/* Keep the original companion and the travelling history as separate objects. */
+.branch-companion { height:auto; }
+.branch-companion svg { height:auto; }
+.history-train { position:fixed; left:0; top:0; width:52px; z-index:19; pointer-events:none; will-change:transform; transition:transform .22s ease-out; }
+.history-train svg { display:block; width:100%; overflow:visible; }
+.history-train .history-rail { opacity:.5; }
+@media(max-width:1319px) { .history-train { width:30px; } }
+@media(max-width:580px) { .history-train { width:20px; } }
+@media(prefers-reduced-motion:reduce) { .history-train { display:none; } }
+/* The history now follows a page-sized route, behind the reading surface. */
+.workspace-body { position:relative; isolation:isolate; }
+.main-content { position:relative; z-index:1; }
+.history-snake { position:absolute; inset:0 0 auto; width:100%; z-index:0; pointer-events:none; overflow:hidden; }
+.snake-spine { stroke:#72917c; stroke-width:3; stroke-linecap:round; opacity:.32; }
+.snake-fork { stroke:#aa7658; stroke-width:2; opacity:.4; }
+.snake-commit { fill:var(--color-paper); stroke:#6b8b75; stroke-width:2.5; }
+.snake-head { fill:var(--color-copper); stroke:var(--color-paper); stroke-width:4; }
+@media(max-width:580px) { .history-snake { opacity:.4; } .snake-spine { stroke-width:2; } }
+@media(prefers-reduced-motion:reduce) { .history-snake { display:none; } }
+.snake-spine { opacity:.48; stroke-width:3.5; }
+.snake-commit { stroke:#52816b; }
+.snake-orbit .snake-fork { stroke-width:1.8; }
+.snake-orbit .branch-kind-1 { stroke:#6e8e72; }
+.snake-orbit .branch-kind-2 { stroke:#8e815d; }
+.snake-orbit .branch-kind-3 { stroke:#a76d50; }
+.branch-companion.cursor-following { transition:none; z-index:35; }

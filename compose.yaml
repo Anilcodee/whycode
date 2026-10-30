@@ -1,0 +1,65 @@
+services:
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?Set your public domain}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      PUBLIC_ORIGIN: https://${DOMAIN:?Set your public domain}
+      TRUST_PROXY: 1
+      DATA_DIRECTORY: /app/.whycode
+      NEO4J_URI: bolt://database:7687
+      NEO4J_USERNAME: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:?Set a strong database password}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      LLM_PROVIDER: gemini
+      LLM_API_KEY: ${LLM_API_KEY:?Set the model API key}
+      LLM_MODEL: ${LLM_MODEL:?Set an available model}
+      LLM_FALLBACK_MODEL: ${LLM_FALLBACK_MODEL:-}
+      SARVAM_API_KEY: ${SARVAM_API_KEY:-}
+      SARVAM_MODEL: ${SARVAM_MODEL:-sarvam-105b}
+      SERPAPI_API_KEY: ${SERPAPI_API_KEY:-}
+      DAILY_ANSWER_LIMIT: ${DAILY_ANSWER_LIMIT:-100}
+      SESSION_ENCRYPTION_KEY: ${SESSION_ENCRYPTION_KEY:?Set a stable session encryption key}
+      SUPABASE_URL: ${SUPABASE_URL:-}
+      SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY:-}
+      ACCOUNT_PROVIDERS: ${ACCOUNT_PROVIDERS:-email,google,github}
+      GITHUB_APP_CLIENT_ID: ${GITHUB_APP_CLIENT_ID:-}
+      GITHUB_APP_CLIENT_SECRET: ${GITHUB_APP_CLIENT_SECRET:-}
+      GITHUB_APP_SLUG: ${GITHUB_APP_SLUG:-}
+      UPSTASH_REDIS_REST_URL: ${UPSTASH_REDIS_REST_URL:-}
+      UPSTASH_REDIS_REST_TOKEN: ${UPSTASH_REDIS_REST_TOKEN:-}
+      RATE_LIMIT_NAMESPACE: ${RATE_LIMIT_NAMESPACE:-whycode-production}
+      DATABASE_URL: ${DATABASE_URL:-}
+      DATABASE_SSL_CA_FILE: ${DATABASE_URL:+/app/deploy/certs/supabase-ca.crt}
+    volumes:
+      - workspace_data:/app/.whycode
+    depends_on:
+      - database
+  database:
+    image: neo4j:5.26-community
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?Set a strong database password}
+    volumes:
+      - graph_data:/data
+volumes:
+  workspace_data:
+  graph_data:
+  caddy_data:
+  caddy_config:
+
