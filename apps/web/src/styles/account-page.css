@@ -33,6 +33,10 @@
 .startup-content { min-height: 65vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 .startup-content h1 { margin: 24px 0 4px; font-size: clamp(24px, 4vw, 36px); }
 .startup-content p { color: #52665c; }
+.loading-indicator { display:flex; align-items:center; gap:12px; padding:16px 0; color:#315b4b; font-size:14px; line-height:1.6; overflow-wrap:anywhere; }
+.loading-indicator .spinner { width:22px; height:22px; }
+.account-page-card>.loading-indicator { margin-bottom:16px; padding:12px; background:#edf3e9; border-radius:8px; }
+.loading-orbit .spinner { width:26px; height:26px; }
 .startup-spinner { display: block; width: 40px; height: 40px; border: 3px solid #d8e2d4; border-top-color: #246553; border-radius: 50%; animation: startup-spin .8s linear infinite; }
 @keyframes startup-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .startup-spinner { animation: none; border-color: #246553; } }
@@ -75,3 +79,48 @@
 .account-button.account-button-signed-in { display: inline-flex; align-items: center; gap: 9px; padding: 5px 14px 5px 5px; }
 .account-avatar { display: inline-grid; place-items: center; width: 32px; height: 32px; flex: 0 0 32px; border-radius: 50%; background: #945f4e; color: #fffdf8; font: 700 14px 'DM Sans', sans-serif; }
 .account-page-card .social-signin button > span { flex: 0 0 20px; }
+
+@media (max-width: 780px) {
+  .workspace-body>.topbar { display:grid; grid-template-columns:minmax(0,1fr) auto; height:auto; min-height:108px; padding:10px 20px 8px; gap:4px 12px; }
+  .workspace-body>.topbar>.brand { grid-column:1; grid-row:1; min-width:0; width:fit-content; font-size:24px; gap:8px; }
+  .workspace-body>.topbar>.brand .brand-symbol { width:32px; flex-shrink:0; }
+  .workspace-body>.topbar>.account-button { grid-column:2; grid-row:1; min-height:44px; margin:0; font-size:13px; white-space:nowrap; }
+  .workspace-body>.topbar>.topbar-actions { grid-column:1/-1; grid-row:2; display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; margin:0; min-width:0; }
+  .topbar-actions .archive-button,.topbar-actions .help-button { display:inline-flex; min-height:44px; padding:8px 0; font-size:13px; gap:7px; }
+  .topbar-actions .archive-count { display:inline; font-size:10px; }
+  .topbar-actions .method-label { display:inline; }
+  .topbar-actions .nav-story-link { display:none; }
+  .topbar-actions .workspace-link { margin-left:auto; }
+  .workspace-dashboard { padding:22px 18px; }
+  .workspace-dashboard-heading { align-items:flex-start; flex-wrap:wrap; gap:8px; }
+  .workspace-dashboard-heading>div { min-width:0; }
+  .workspace-dashboard-heading .text-button { min-height:44px; }
+  .workspace-dashboard-repositories { grid-template-columns:minmax(0,1fr); }
+  .workspace-dashboard-repositories>button { min-width:0; padding:15px 12px; }
+  .workspace-dashboard-repositories>button>svg { flex-shrink:0; }
+  .workspace-dashboard-repositories strong { font-size:15px; }
+  .workspace-dashboard-repositories small { font-size:13px; }
+  .repository-access { flex-wrap:wrap; gap:6px; }
+  .repository-access button { min-height:44px; }
+  .repo-input { min-width:0; }
+  .repo-input input,.question-composer textarea,.account-form input { min-width:0; font-size:16px; }
+  .repository-title>div { min-width:0; }
+  .composer-toolbar { flex-wrap:wrap; }
+  .composer-toolbar .ask-action { margin-left:auto; }
+  .footer-technology dl>div { flex-wrap:wrap; gap:4px 12px; }
+  .footer-technology dd { margin:0; overflow-wrap:anywhere; }
+  .account-page-header.topbar { height:auto; min-height:76px; padding:12px 20px; gap:12px; flex-wrap:wrap; }
+  .account-page-header .brand { font-size:23px; gap:8px; }
+  .account-page-header .brand-symbol { width:30px; }
+  .account-return { min-height:44px; text-align:right; }
+}
+@media (max-width: 480px) {
+  .workspace-body>.topbar>.account-button-signed-in { width:44px; height:44px; padding:5px; justify-content:center; }
+  .account-button-signed-in .account-label { display:none; }
+  .has-repository .result-tabs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .has-repository .result-tabs button { justify-content:center; min-width:0; min-height:44px; }
+  .has-repository .composer-toolbar .ask-action,.has-repository .composer-toolbar .primary { width:100%; }
+  .has-repository .composer-toolbar .primary { justify-content:center; min-height:46px; }
+  .history-options summary { flex-wrap:wrap; }
+  .try-example { flex-wrap:wrap; }
+}

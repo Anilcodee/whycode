@@ -39,7 +39,7 @@
 .tree-stage svg:focus-visible { outline:2px solid #587d46; outline-offset:4px; border-radius:5px; }
 .tree-card { cursor:grab; }
 .tree-stage.is-dragging svg,.tree-stage.is-dragging .tree-card { cursor:grabbing; }
-@media(max-width:700px) { .tree-controls { justify-content:flex-start; width:100%; gap:6px; } .tree-gesture-guide { font-size:11px; padding:10px 13px; } }
+@media(max-width:700px) { .tree-controls { justify-content:flex-start; width:100%; gap:6px; } .tree-controls button { min-height:44px; min-width:44px; } .tree-gesture-guide { font-size:11px; padding:10px 13px; } }
 .tree-stage.is-packed .tree-label { font-size:14px; }
 .tree-stage.is-packed .tree-type { font-size:11px; }
 /* Relationship badges are painted last, above card depth and connectors. */

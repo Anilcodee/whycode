@@ -12,12 +12,14 @@ type Options = {
 
 export function useAccount({ session, setPrivateMode, setPrivateConsent, setNotice }: Options) {
   const [account, setAccount] = useState<Account | null>(null);
+  const [accountError, setAccountError] = useState('');
   const [accountOpen, setAccountOpenState] = useState(() => window.location.pathname === '/account');
   const setAccountOpen = useCallback((open: boolean) => {
     const target = open ? '/account' : '/workspace';
     if (window.location.pathname !== target) window.history.pushState(null, '', target);
     setAccountOpenState(open);
     window.dispatchEvent(new PopStateEvent('popstate'));
+    window.scrollTo(0, 0);
   }, []);
   const [recovery, setRecovery] = useState(() => new URLSearchParams(window.location.search).get('account') === 'recovery');
   const requestVersion = useRef(0);
@@ -26,12 +28,18 @@ export function useAccount({ session, setPrivateMode, setPrivateConsent, setNoti
 
   const refreshAccount = useCallback(async () => {
     const version = ++requestVersion.current;
-    const next = await api<Account>('/account/session');
-    if (version !== requestVersion.current) return;
-    setAccount(next);
-    const change = accountAccessChange(next, sessionRef.current);
-    if (change.privateMode !== undefined) setPrivateMode(change.privateMode);
-    if (change.clearConsent) setPrivateConsent(false);
+    try {
+      const next = await api<Account>('/account/session');
+      if (version !== requestVersion.current) return;
+      setAccount(next);
+      setAccountError('');
+      const change = accountAccessChange(next, sessionRef.current);
+      if (change.privateMode !== undefined) setPrivateMode(change.privateMode);
+      if (change.clearConsent) setPrivateConsent(false);
+    } catch (reason) {
+      if (version === requestVersion.current) setAccountError(reason instanceof Error ? reason.message : 'Account access could not be checked.');
+      throw reason;
+    }
   }, [setPrivateMode, setPrivateConsent]);
 
   useEffect(() => {
@@ -55,5 +63,5 @@ export function useAccount({ session, setPrivateMode, setPrivateConsent, setNoti
     return () => window.removeEventListener('popstate', syncPage);
   }, []);
 
-  return { account, accountOpen, setAccountOpen, refreshAccount, recovery, setRecovery };
+  return { account, accountError, accountOpen, setAccountOpen, refreshAccount, recovery, setRecovery };
 }

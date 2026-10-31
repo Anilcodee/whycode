@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 
 import type { Account } from '../types/account';
 import { ProviderLogo } from './ProviderLogo';
+import { LoadingIndicator } from './LoadingIndicator';
 export type { Account } from '../types/account';
 
 type Request = <T>(path: string, body?: unknown) => Promise<T>;
@@ -27,6 +28,7 @@ export function AccountDialog({ open, account, recovery, request, onClose, onCha
   async function redirect(path: string, body: unknown) { await run(async () => { const result = await request<{ url: string }>(path, body); window.location.assign(result.url); }); }
   function changeMode(next: typeof mode) { setMode(next); setPassword(''); setConfirmation(''); setError(''); setMessage(''); }
   return <section className="account-dialog account-page-card" aria-labelledby="account-title">
+    {busy && <LoadingIndicator>Processing your account request…</LoadingIndicator>}
     <span className="account-eyebrow">YOUR WHYCODE ACCOUNT</span>
     <h2 id="account-title">{recovery ? 'Reset your password' : account?.user ? 'Your account' : mode === 'signup' ? 'A place for your curiosity.' : mode === 'recover' || mode === 'reset' ? 'Reset your password' : 'Welcome to WhyCode'}</h2>
     {!account ? <p role="status">Checking account access…</p> : !account.configured ? <div className="account-unavailable"><p>Account sign-in is not available on this server yet.</p><p>You can explore public repositories now. Private access becomes available after the account provider and GitHub App are connected.</p><button className="primary" onClick={onClose}>Explore public repositories</button></div> : account.user && !recovery ? <>
@@ -43,9 +45,9 @@ export function AccountDialog({ open, account, recovery, request, onClose, onCha
       {account.providers.includes('email') && <form onSubmit={submit} className="account-form">
         {mode !== 'reset' && <><label htmlFor="account-email">Email address</label><input id="account-email" name="username" type="email" autoComplete={mode === 'login' ? 'username' : 'email'} value={email} onChange={event => setEmail(event.target.value)} maxLength={254} required disabled={busy} /></>}
         {mode !== 'recover' && <><label htmlFor="account-password">{mode === 'login' ? 'Password' : 'New password'}</label><input id="account-password" name="password" type="password" autoComplete={mode === 'login' ? 'current-password' : 'new-password'} minLength={mode === 'login' ? 1 : 12} maxLength={128} value={password} onChange={event => setPassword(event.target.value)} required disabled={busy} />{mode !== 'login' && <><small>Use at least 12 characters. A unique passphrase works well.</small><label htmlFor="account-confirm">Confirm password</label><input id="account-confirm" type="password" autoComplete="new-password" minLength={12} maxLength={128} value={confirmation} onChange={event => setConfirmation(event.target.value)} required disabled={busy} /></>}</>}
-        <button className="primary" disabled={busy}>{busy ? 'Please wait…' : mode === 'login' ? 'Sign in' : mode === 'signup' ? 'Create account' : mode === 'recover' ? 'Send reset link' : 'Update password'}</button>
+        <button className="primary" disabled={busy}>{busy ? <><span className="spinner" aria-hidden="true" />Please wait…</> : mode === 'login' ? 'Sign in' : mode === 'signup' ? 'Create account' : mode === 'recover' ? 'Send reset link' : 'Update password'}</button>
       </form>}
-      <div className="account-links">{mode === 'login' ? <><button onClick={() => changeMode('signup')}>Create an account</button><button onClick={() => changeMode('recover')}>Forgot password?</button></> : <button onClick={() => changeMode('login')}>Back to sign in</button>}</div>
+      <div className="account-links">{mode === 'login' ? <><button disabled={busy} onClick={() => changeMode('signup')}>Create an account</button><button disabled={busy} onClick={() => changeMode('recover')}>Forgot password?</button></> : <button disabled={busy} onClick={() => changeMode('login')}>Back to sign in</button>}</div>
       <p className="account-hint">Email verification is required. Signing in does not grant repository access.</p>
     </>}
     {message && <p className="account-message" role="status">{message}</p>}{error && <p className="error-text" role="alert">{error}</p>}
