@@ -1,8 +1,18 @@
 # WhyCode Documentation
 
-This folder contains the product and delivery documentation for WhyCode.
+Start with the [project README](../README.md) for current setup, features, data ownership and deployment status.
 
-## Documents
+## Current guides
+
+- [Backend runtime and recovery](backend-scaling.md)
+- [Workspace setup](workspace-setup.md)
+- [Database migrations](../supabase/migrations/README.md)
+- [QA fixes](../qa-audit/FIX-REPORT.md)
+- [HackFront submission files and form text](hackathon/README.md)
+
+## Product and design history
+
+The documents below record earlier design and implementation stages. Some describe superseded authentication, storage or deployment behavior. Use the project README and current guides above for operational instructions.
 
 | Document | Purpose |
 | --- | --- |
@@ -16,7 +26,7 @@ This folder contains the product and delivery documentation for WhyCode.
 | [Implementation Plan](implementation-plan.md) | Dependency-aware delivery sequence and vertical slices |
 | [Development Setup](development-setup.md) | Local prerequisites, start commands, indexing behavior, and available checks |
 
-The PRD is the primary product document. The other documents provide more focused detail and should stay consistent with it.
+The PRD captures product intent; it is not a statement that every planned capability is implemented.
 
 ## Suggested reading order
 
@@ -30,13 +40,15 @@ The PRD is the primary product document. The other documents provide more focuse
 8. Implementation Plan
 9. Development Setup
 
-## Current implementation and operations
+## Earlier operations notes and verification samples
 
 - [Security and reliability](security-and-reliability.md)
 - [Deployment](deployment.md)
 - [Live integration results](live-verification.json)
 - [Eight-question evaluation](evaluation-results.json)
 
-The PRD and conceptual model contain longer-term targets. The implementation/operations documents state what is currently supported and its practical limits.
+These records describe specific implementation stages and verification runs, not current hosted acceptance or a representative model-accuracy benchmark.
 
 - [Current interface design and motion system](interface-design.md)
+
+The retained product screenshots support the HackFront presentation. Earlier UI iteration captures have been removed to keep the repository focused.

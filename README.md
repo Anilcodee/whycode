@@ -6,7 +6,7 @@ WhyCode helps developers investigate unfamiliar GitHub repositories. Ask about a
 
 A repository can show **what changed** without recording **why someone chose it**. WhyCode connects the available records, explains what they support, and withholds an explanation when the evidence is insufficient.
 
-> Working application with automated tests and live database verification. Production hosting and real-provider acceptance testing are separate release steps; this README does not claim a public production deployment.
+> Deployed prototype: [WhyCode on Render](https://whycode-76qv.onrender.com). Automated tests and live database verification are documented below; hosted end-to-end acceptance and production readiness are separate checks. Render Free may sleep after inactivity. Public email delivery is restricted until custom SMTP is configured; use guest access or configured Google/GitHub login for the demo.
 
 ## What you can do
 
@@ -265,7 +265,7 @@ npm start
 
 The API serves the built frontend. The included Docker Compose topology runs one app container behind Caddy. Configure the production domain, HTTPS `PUBLIC_ORIGIN`, provider secrets and databases before deployment. `TRUST_PROXY=1` is appropriate only behind the isolated trusted proxy in that topology. Do not expose Vite development ports publicly.
 
-Central runtime behavior has been tested across API instances. Public rollout still needs real-provider acceptance, hosting/domain and OAuth configuration, production email delivery, load testing, backups with restore testing, monitoring and alerts. Passing local/database tests does not imply a completed production deployment.
+Central runtime behavior has been tested across API instances. The prototype is deployed on Render with hosted callback URLs configured. Public rollout still needs complete hosted real-provider acceptance, production email delivery, load testing, backups with restore testing, monitoring and alerts. Passing local/database tests and successful service startup do not establish production readiness.
 
 ## Repository map
 
