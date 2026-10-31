@@ -1,8 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+
+const PHONE_OR_TOUCH_SCREEN = '(max-width: 767px), (hover: none) and (pointer: coarse)';
 
 /** A decorative git-branch guide. The headline orbit flows into direction-aware scroll routes. */
 export function BranchCompanion({ motion, showTrail = true }: { motion: boolean; showTrail?: boolean }) {
+  const [hideDecorations, setHideDecorations] = useState(() => window.matchMedia(PHONE_OR_TOUCH_SCREEN).matches);
+  useEffect(() => {
+    const screen = window.matchMedia(PHONE_OR_TOUCH_SCREEN);
+    const update = () => setHideDecorations(screen.matches);
+    update();
+    screen.addEventListener('change', update);
+    return () => screen.removeEventListener('change', update);
+  }, []);
   const guide = useRef<HTMLDivElement>(null);
   const surface = useRef<SVGSVGElement>(null);
   const body = useRef<SVGPathElement>(null);
@@ -16,7 +26,7 @@ export function BranchCompanion({ motion, showTrail = true }: { motion: boolean;
   
   const cars = useRef<Array<SVGCircleElement | null>>([]);
   useEffect(() => {
-    if (!motion) return;
+    if (!motion || hideDecorations) return;
     let frame = 0, previous = window.scrollY, direction = 1, targetDirection = 1;
     let width = 0, height = 0, pageHeight = 0, cx = 0, cy = 0, rx = 0, ry = 0;
     let lastTime = 0, phase = 0, smoothScroll = window.scrollY, lastMove = -1000;
@@ -138,8 +148,8 @@ export function BranchCompanion({ motion, showTrail = true }: { motion: boolean;
       document.removeEventListener('visibilitychange', visibility);
       document.documentElement.style.removeProperty('--journey-progress');
     };
-  }, [motion, showTrail]);
-  if (!motion) return null;
+  }, [motion, showTrail, hideDecorations]);
+  if (!motion || hideDecorations) return null;
   return <>{createPortal(<div ref={guide} className="branch-companion" aria-hidden="true">
     <svg viewBox="0 0 64 100" fill="none">
       <ellipse cx="32" cy="94" rx="17" ry="3" fill="#246553" opacity=".12" />
